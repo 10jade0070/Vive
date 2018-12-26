@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 8882655}
   - component: {fileID: 8882654}
   - component: {fileID: 8882653}
-  - component: {fileID: 8882652}
   - component: {fileID: 8882651}
   m_Layer: 0
   m_Name: Cube (1)
@@ -149,39 +148,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8882652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8882650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de27f8a07624fa4bb7fa09ba9bb07a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0, z: 0}
-  rotOffset: {x: 0, y: 0, z: 0}
-  m_initGrabDistance: 0.5
-  m_followingDuration: 0.04
-  m_overrideMaxAngularVelocity: 1
-  m_unblockableGrab: 0
-  m_afterGrabbed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_beforeRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_onDrop:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_scrollingSpeed: 0.01
 --- !u!65 &8882653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -789,7 +755,6 @@ GameObject:
   - component: {fileID: 948487261}
   - component: {fileID: 948487260}
   - component: {fileID: 948487259}
-  - component: {fileID: 948487258}
   - component: {fileID: 948487257}
   m_Layer: 0
   m_Name: Cube (3)
@@ -813,39 +778,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &948487258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 948487256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de27f8a07624fa4bb7fa09ba9bb07a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0, z: 0}
-  rotOffset: {x: 0, y: 0, z: 0}
-  m_initGrabDistance: 0.5
-  m_followingDuration: 0.04
-  m_overrideMaxAngularVelocity: 1
-  m_unblockableGrab: 0
-  m_afterGrabbed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_beforeRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_onDrop:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_scrollingSpeed: 0.01
 --- !u!65 &948487259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -926,6 +858,7 @@ GameObject:
   - component: {fileID: 1042568757}
   - component: {fileID: 1042568761}
   - component: {fileID: 1042568762}
+  - component: {fileID: 1042568763}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1019,17 +952,61 @@ MonoBehaviour:
   m_unblockableGrab: 0
   m_afterGrabbed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1042568763}
+        m_MethodName: AfterGrabbed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_beforeRelease:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1042568763}
+        m_MethodName: BeforeRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_onDrop:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1042568763}
+        m_MethodName: OnDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_scrollingSpeed: 0.01
@@ -1048,6 +1025,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1042568763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042568756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e98ec8c27bf4d54a8969578f53e5f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1112208870
 Mesh:
   m_ObjectHideFlags: 0
@@ -1214,7 +1202,6 @@ GameObject:
   - component: {fileID: 1380863046}
   - component: {fileID: 1380863045}
   - component: {fileID: 1380863044}
-  - component: {fileID: 1380863043}
   - component: {fileID: 1380863042}
   m_Layer: 0
   m_Name: Cube (4)
@@ -1238,39 +1225,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1380863043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380863041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de27f8a07624fa4bb7fa09ba9bb07a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0, z: 0}
-  rotOffset: {x: 0, y: 0, z: 0}
-  m_initGrabDistance: 0.5
-  m_followingDuration: 0.04
-  m_overrideMaxAngularVelocity: 1
-  m_unblockableGrab: 0
-  m_afterGrabbed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_beforeRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_onDrop:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_scrollingSpeed: 0.01
 --- !u!65 &1380863044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1415,7 +1369,6 @@ GameObject:
   - component: {fileID: 1535463797}
   - component: {fileID: 1535463796}
   - component: {fileID: 1535463795}
-  - component: {fileID: 1535463794}
   - component: {fileID: 1535463793}
   m_Layer: 0
   m_Name: Cube (2)
@@ -1439,39 +1392,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1535463794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1535463792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de27f8a07624fa4bb7fa09ba9bb07a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posOffset: {x: 0, y: 0, z: 0}
-  rotOffset: {x: 0, y: 0, z: 0}
-  m_initGrabDistance: 0.5
-  m_followingDuration: 0.04
-  m_overrideMaxAngularVelocity: 1
-  m_unblockableGrab: 0
-  m_afterGrabbed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_beforeRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_onDrop:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  m_scrollingSpeed: 0.01
 --- !u!65 &1535463795
 BoxCollider:
   m_ObjectHideFlags: 0
